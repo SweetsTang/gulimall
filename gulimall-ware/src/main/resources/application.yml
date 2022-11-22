@@ -1,0 +1,27 @@
+server:
+  port: 9400
+spring:
+  application:
+    name: gulimall-ware
+  # 数据源
+  datasource:
+    username: root
+    password: 123456
+    url: jdbc:mysql://com.tangmx.gulimalldev:3306/gulimall_wms
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  cloud:
+    nacos:
+      # 服务注册与发现
+      discovery:
+        server-addr: 127.0.0.1:8848
+  # 配置中心
+  config:
+    import: nacos:nacosConfig.yml
+# mybatis-plus
+mybatis-plus:
+  # mapper映射文件路径
+  mapper-locations: classpath:/mapper/**/*.xml
+  global-config:
+    db-config:
+      # id 生成规则
+      id-type: auto
