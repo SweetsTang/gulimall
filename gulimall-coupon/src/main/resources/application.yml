@@ -15,9 +15,12 @@ spring:
       # 服务注册与发现
       discovery:
       server-addr: 127.0.0.1:8848
-  # 配置中心
+      # 配置中心
+      config:
+        namespace: gulimall-coupon
+        group: dev
   config:
-    import: nacos:nacosConfig.yml
+    import: nacos:gulimall-coupon.yml
 # mybatis-plus
 mybatis-plus:
   # mapper映射文件路径
@@ -26,3 +29,7 @@ mybatis-plus:
     db-config:
       # id 生成规则
       id-type: auto
+coupon:
+  user:
+    name: zhaoliu
+    age: 24

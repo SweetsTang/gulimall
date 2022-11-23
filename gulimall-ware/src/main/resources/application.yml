@@ -14,9 +14,13 @@ spring:
       # 服务注册与发现
       discovery:
       server-addr: 127.0.0.1:8848
+      # 配置中心
+      config:
+        namespace: gulimall-ware
+        group: dev
   # 配置中心
   config:
-    import: nacos:nacosConfig.yml
+    import: nacos:gulimall-ware.yml
 # mybatis-plus
 mybatis-plus:
   # mapper映射文件路径
