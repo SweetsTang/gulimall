@@ -1,0 +1,28 @@
+server:
+  port: 9500
+spring:
+  # 应用名称
+  application:
+    name: gulimall-gateway
+  cloud:
+    nacos:
+      # 服务注册与发现
+      discovery:
+      server-addr: 127.0.0.1:8848
+      # 配置中心
+      config:
+        namespace: gulimall-gateway
+        group: dev
+    # 网关
+    gateway:
+      routes:
+        - id: baidu_route
+          uri: https://www.baidu.com
+          predicates:
+            - Query=url,baidu
+        - id: qq_route
+          uri: https://www.qq.com
+          predicates:
+            - Query=url,qq
+  config:
+    import: nacos:gulimall-gateway.yml
